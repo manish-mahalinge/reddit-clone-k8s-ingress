@@ -2,15 +2,13 @@
 
 This project demonstrates how to deploy a Reddit Clone application on Kubernetes using Docker, Kubernetes Deployments, Services, and Ingress. The application is exposed externally using an Ingress Controller running on a Minikube cluster.
 
-Below is the architecture diagram of the Reddit Clone application running on Kubernetes with Ingress.
+Below is an overview of the architecture of this Reddit Clone application running on Kubernetes with Ingress.
 
 ![Architecture Diagram](https://github.com/LondheShubham153/reddit-clone-k8s-ingress/assets/71492927/e1eec5f2-1983-445b-8966-e9acfdea7f8e)
 
----
-
 ## Prerequisites
 
-Before getting started, make sure the following tools are installed on your local machine:
+Before you begin, make sure the following tools are installed on your local machine:
 
 * Docker
 * Minikube Cluster (Running)
@@ -22,7 +20,7 @@ Before getting started, make sure the following tools are installed on your loca
 
 ## Installation
 
-Follow these steps to run the Reddit Clone application on Kubernetes.
+Follow these steps to install and run the Reddit Clone application on your local machine.
 
 ### 1. Clone the Repository
 
@@ -42,7 +40,7 @@ cd reddit-clone-k8s-ingress
 docker build -t reddit-clone-app .
 ```
 
-### 4. Deploy the Application
+### 4. Deploy the Application to Kubernetes
 
 ```sh
 kubectl apply -f deployment.yml
@@ -96,7 +94,7 @@ curl http://domain.com/test
 
 ### Prometheus
 
-* Collects and stores metrics
+* Collects and stores metrics data
 * Monitors Kubernetes resources and workloads
 
 ### Alertmanager
@@ -158,12 +156,6 @@ kubectl get svc -n prometheus
 kubectl edit svc stable-kube-prometheus-sta-prometheus -n prometheus
 ```
 
-Change the service type to:
-
-```yaml
-type: LoadBalancer
-```
-
 ### Edit Grafana Service
 
 ```sh
@@ -194,8 +186,6 @@ Password: prom-operator
 ---
 
 ## Import Grafana Dashboard
-
-Steps to import a monitoring dashboard in Grafana:
 
 ```sh
 1. Click '+' icon from the left panel
