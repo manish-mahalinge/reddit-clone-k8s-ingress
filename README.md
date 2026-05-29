@@ -115,7 +115,7 @@ curl http://domain.com/test
 
 * Kubernetes / EKS Cluster
 * Helm Installed
-* EC2 Instance or local machine with cluster access
+* EC2 instance or local machine with cluster access
 
 ---
 
@@ -158,7 +158,7 @@ kubectl get svc -n prometheus
 kubectl edit svc stable-kube-prometheus-sta-prometheus -n prometheus
 ```
 
-Change service type to:
+Change the service type to:
 
 ```yaml
 type: LoadBalancer
@@ -170,7 +170,7 @@ type: LoadBalancer
 kubectl edit svc stable-grafana -n prometheus
 ```
 
-Change service type to:
+Change the service type to:
 
 ```yaml
 type: LoadBalancer
@@ -239,6 +239,4 @@ kubectl logs <pod-name>
 
 ---
 
-## Contributing
-
-If you'd like to contribute to this project, feel free to open an issue or submit a pull request.
+This project was created for learning Kubernetes, Ingress, monitoring, and containerized deployments.
